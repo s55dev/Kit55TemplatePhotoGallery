@@ -1,0 +1,38 @@
+{% extends "templates/base.tpl.html" %}
+{% block title %}Kit55 Template Photo Gallery{% endblock %}
+{% block content %}
+<section class="text-gray-600 body-font">
+  <div class="container px-5  mx-auto flex flex-wrap">
+    <div class="flex flex-wrap md:-m-2  pb-4">
+      <div class="flex flex-wrap w-1/2">
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://picsum.photos/id/{{ range(10, 20) | random }}/720/600">
+        </div>
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://picsum.photos/id/{{ range(10, 20) | random }}/720/600">
+        </div>
+        <div class="md:p-2 p-1 w-full">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://picsum.photos/id/{{ range(10, 20) | random }}/720/600">
+        </div>
+      </div>
+      <div class="flex flex-wrap w-1/2">
+        <div class="md:p-2 p-1 w-full">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://picsum.photos/id/{{ range(10, 20) | random }}/720/600">
+        </div>
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://picsum.photos/id/{{ range(10, 20) | random }}/720/600">
+        </div>
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://picsum.photos/id/{{ range(10, 20) | random }}/720/600">
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap -m-2">
+      {% set w = 9 %}
+      {% for i in range(0, w) -%}
+      {% include 'templates/post.tpl.html' %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
